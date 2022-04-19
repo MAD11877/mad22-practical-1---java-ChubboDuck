@@ -1,5 +1,6 @@
 import java.util.Scanner;
-
+import java.util.List;
+import java.util.LinkedList;
 public class Question5
 {
   public static void main(String[] args)
@@ -27,6 +28,31 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
+    int numOccur = in.nextInt();
+    var maxCount = 0;
+    List<Integer> numList = new LinkedList<Integer>();
+
+    // Take in input and assign it to the numList //
+    for (int i = 0; i < numOccur; i++){
+      int num = in.nextInt();
+      numList.add(num);
+    }
+
+    int mode = numList.get(0); // intialise mode value
     
+    for (int element = 0; element < numOccur; element++) {
+      int count = 0;
+      for (int index = 1; index < numOccur - element; index++) {
+        if (numList.get(element) == numList.get(element + index)) {
+          count += 1;
+        }
+      }
+      System.out.println(count);
+      if (maxCount < count){  
+        mode = numList.get(element);
+        maxCount = count;
+      }
+    }
+    System.out.println(mode);
   }
 }
