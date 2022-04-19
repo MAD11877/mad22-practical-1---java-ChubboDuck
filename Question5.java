@@ -47,7 +47,7 @@ public class Question5
           count += 1;
         }
       }
-      System.out.println(count);
+      
       if (maxCount < count){  
         mode = numList.get(element);
         maxCount = count;
