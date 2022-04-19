@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Collections;
 public class Question5
 {
   public static void main(String[] args)
