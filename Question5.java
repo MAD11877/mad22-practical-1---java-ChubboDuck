@@ -41,17 +41,11 @@ public class Question5
     int mode = numList.get(0); // intialise mode value
     
     for (int element = 0; element < numOccur; element++) {
-      int count = 0;
-      for (int index = 1; index < numOccur - element; index++) {
-        if (numList.get(element) == numList.get(element + index)) {
-          count += 1;
-        }
-      }
-      
+      int count = Collections.frequency(numList,numList.get(element));
       if (maxCount < count){  
         mode = numList.get(element);
         maxCount = count;
-      }
+      } 
     }
     System.out.println(mode);
   }
